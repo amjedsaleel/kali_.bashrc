@@ -7,6 +7,7 @@ case $- in
     *i*) ;;
       *) return;;
 esac
+
 # don't put duplicate lines or lines starting with space in the history.
 # See bash(1) for more options
 HISTCONTROL=ignoreboth
@@ -52,7 +53,7 @@ if [ -n "$force_color_prompt" ]; then
 	color_prompt=yes
     else
 	color_prompt=
-      fi
+    fi
 fi
 
 if [ "$color_prompt" = yes ]; then
@@ -67,7 +68,7 @@ case "$TERM" in
 xterm*|rxvt*)
     PS1="\[\e]0;${debian_chroot:+($debian_chroot)}\u@\h: \w\a\]$PS1"
     ;;
-    *)
+*)
     ;;
 esac
 
@@ -92,6 +93,7 @@ fi
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
 # See /usr/share/doc/bash-doc/examples in the bash-doc package.
+
 if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
